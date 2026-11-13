@@ -1,0 +1,46 @@
+name: Sync to ASCELBILL (Trigger Cloudflare Deploy)
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Sync main branch to ASCEL6251/ASCELBILL
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync main to ASCEL6251/ASCELBILL
+        env:
+          SYNC_TOKEN: ${{ secrets.ASCEL_GITHUB_TOKEN || secrets.SYNC_TOKEN || secrets.GH_PAT }}
+        run: |
+          if [ -z "$SYNC_TOKEN" ]; then
+            echo "::error::Secret ASCEL_GITHUB_TOKEN (or SYNC_TOKEN) is not set!"
+            echo "Please create a GitHub Personal Access Token with repo/contents write access for ASCEL6251/ASCELBILL"
+            echo "and add it to this repository's Settings -> Secrets and variables -> Actions."
+            exit 1
+          fi
+
+          echo "Configuring git credentials..."
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+          echo "Pushing main branch to ASCEL6251/ASCELBILL..."
+          git push --force "https://x-access-token:${SYNC_TOKEN}@github.com/ASCEL6251/ASCELBILL.git" main --tags
+
+          echo "Successfully synced to https://github.com/ASCEL6251/ASCELBILL"
+          echo "If Cloudflare is connected to ASCEL6251/ASCELBILL, it will automatically start building and deploying now."
+
+      - name: Trigger Cloudflare Deploy Hook (Optional)
+        if: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK != '' }}
+        env:
+          DEPLOY_HOOK: ${{ secrets.CLOUDFLARE_DEPLOY_HOOK }}
+        run: |
+          echo "Triggering Cloudflare Deploy Hook..."
+          curl -s -X POST "$DEPLOY_HOOK" -o /dev/null -w "Deploy hook response HTTP code: %{http_code}\n"
