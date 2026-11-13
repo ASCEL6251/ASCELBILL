@@ -1,8 +1,8 @@
 <div align="center">
 
-<img src="public/favicon.svg" alt="PayzenMax logo" width="96" height="96" />
+<img src="public/favicon.svg" alt="Ascel Bill logo" width="96" height="96" />
 
-# PayzenMax
+# Ascel Bill
 
 **Offline-ready GST billing & business platform for Indian counters**
 
@@ -40,7 +40,7 @@ CBIC Rule 46 tax invoices · Automatic CGST / SGST / IGST · GSTR-1 ready report
 
 ## 📖 Overview
 
-PayzenMax is an India-first billing and business-visibility platform for small traders, service businesses and counter operators, built from the 30 October 2026 PRD. It has two parts, shipped from one Astro project:
+Ascel Bill is an India-first billing and business-visibility platform for small traders, service businesses and counter operators, built from the 30 October 2026 PRD. It has two parts, shipped from one Astro project:
 
 | Route | What it is | Source |
 |---|---|---|
@@ -162,8 +162,8 @@ gstbillings/
 **Requirements:** Node.js ≥ 22.23.4 (Cloudflare builds use 24, see `.nvmrc`) and npm 10+.
 
 ```bash
-git clone https://github.com/Sujoymoulick/PAYZENMAX.git
-cd PAYZENMAX
+git clone https://github.com/Sujoymoulick/AscelBill.git
+cd AscelBill
 npm install
 npm run dev
 ```
@@ -194,7 +194,7 @@ npm run deploy         # astro build + wrangler deploy
 
 **Git-connected Workers Builds:** push to `main` and Cloudflare runs `npm ci` then `npx wrangler deploy`, which builds the site itself through `build.command` — no extra build command needed in the dashboard.
 
-It goes live at `payzenmax.<your-subdomain>.workers.dev`. Add a custom domain under the Worker's **Domains & Routes** in the Cloudflare dashboard.
+It goes live at `ascelbill.<your-subdomain>.workers.dev`. Add a custom domain under the Worker's **Domains & Routes** in the Cloudflare dashboard.
 
 ---
 
@@ -269,6 +269,6 @@ It goes live at `payzenmax.<your-subdomain>.workers.dev`. Add a custom domain un
 
 <img src="public/favicon.svg" alt="" width="32" height="32" />
 
-**PayzenMax.com** · GSTIN-aware · Paise-exact · Made in India
+**Ascel Bill** · GSTIN-aware · Paise-exact · Made in India
 
 </div>

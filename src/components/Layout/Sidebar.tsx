@@ -52,11 +52,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
             aria-hidden="true"
             className="w-7 h-7 rounded-md bg-[#17181A] text-[#FFFFFF] font-semibold text-[13px] flex items-center justify-center tracking-tight"
           >
-            PM
+            AB
           </div>
           <div>
             <div className="font-semibold text-[14px] leading-tight text-[#17181A]">
-              PayzenMax.com
+              Ascel Bill
             </div>
             <div className="text-[11px] text-[#5E6168] leading-none mt-0.5">
               GST Billing Platform

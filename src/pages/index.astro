@@ -21,7 +21,7 @@ const features = [
     tab: 'Dashboard',
     kicker: '02 — GST engine',
     title: 'CGST, SGST or IGST. Decided for you, to the paisa.',
-    body: 'PayzenMax compares the seller and buyer state codes and splits tax automatically. All arithmetic runs in integer paise, so totals never drift — inclusive or exclusive pricing alike.',
+    body: 'Ascel Bill compares the seller and buyer state codes and splits tax automatically. All arithmetic runs in integer paise, so totals never drift — inclusive or exclusive pricing alike.',
     points: ['Intra-state → CGST + SGST', 'Inter-state → IGST', 'Transparent round-off to the rupee'],
     chips: [
       { k: '27 → 27', v: 'CGST 9% + SGST 9%' },
@@ -115,7 +115,7 @@ const stats = [
 
 // Hero description, split into words for the reveal; `hl` phrases get a drawn underline.
 const heroSub: { t: string; hl?: boolean }[] = [
-  { t: 'PayzenMax turns every counter sale into a' },
+  { t: 'Ascel Bill turns every counter sale into a' },
   { t: 'Rule 46 tax invoice', hl: true },
   { t: '— CGST, SGST or IGST worked out' },
   { t: 'to the paisa,', hl: true },
@@ -139,9 +139,9 @@ const testimonials = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>PayzenMax — GST billing that keeps your books honest</title>
+    <title>Ascel Bill — GST billing that keeps your books honest</title>
     <meta name="description" content="Offline-first GST billing for Indian counters. CBIC Rule 46 invoices, automatic CGST/SGST/IGST, GSTR-1 ready reports and an assistant that answers from your own books." />
-    <meta property="og:title" content="PayzenMax — GST billing that keeps your books honest" />
+    <meta property="og:title" content="Ascel Bill — GST billing that keeps your books honest" />
     <meta property="og:description" content="Offline-first GST billing, Rule 46 invoices and GSTR-1 ready reports for Indian businesses." />
     <meta name="theme-color" content="#F6F6F3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -152,9 +152,9 @@ const testimonials = [
     <a class="skip" href="#features">Skip to features</a>
 
     <header class="nav" data-nav>
-      <a class="nav__brand" href="/" aria-label="PayzenMax home">
+      <a class="nav__brand" href="/" aria-label="Ascel Bill home">
         <img src="/favicon.svg" alt="" width="28" height="28" />
-        <span>Payzen<b>Max</b></span>
+        <span>Ascel <b>Bill</b></span>
       </a>
       <nav class="nav__links" aria-label="Primary">
         <a href="#features">Features</a>
@@ -258,7 +258,7 @@ const testimonials = [
       </div>
 
       <!-- ============ STATS ============ -->
-      <section class="stats" aria-label="PayzenMax in numbers">
+      <section class="stats" aria-label="Ascel Bill in numbers">
         {stats.map((s) => (
           <div class="stat reveal">
             <p class="stat__v"><span data-count={s.v}>{s.v}</span>{s.s}</p>
@@ -310,7 +310,7 @@ const testimonials = [
         <h2 id="cta-title" class="cta__title">Issue your first GST invoice in under a minute.</h2>
         <p class="cta__sub">No signup. Demo data included. Your books stay on your device.</p>
         <div class="hero__ctas">
-          <a class="btn btn--light" href="/app/">Open PayzenMax</a>
+          <a class="btn btn--light" href="/app/">Open Ascel Bill</a>
           <a class="btn btn--outline-light" href="#features">Revisit features</a>
         </div>
       </section>
@@ -319,7 +319,7 @@ const testimonials = [
     <footer class="footer">
       <div class="footer__top">
         <div>
-          <a class="nav__brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28" /><span>Payzen<b>Max</b></span></a>
+          <a class="nav__brand" href="/"><img src="/favicon.svg" alt="" width="28" height="28" /><span>Ascel <b>Bill</b></span></a>
           <p class="footer__tag">Offline-ready GST billing &amp; business platform for India.</p>
         </div>
         <div class="footer__cols">
@@ -339,12 +339,12 @@ const testimonials = [
             <p class="footer__h">Company</p>
             <a href="#stories">Stories</a>
             <a href="#how">How it works</a>
-            <a href="mailto:hello@payzenmax.com">hello@payzenmax.com</a>
+            <a href="mailto:hello@ascelbill.com">hello@ascelbill.com</a>
           </div>
         </div>
       </div>
       <div class="footer__bottom">
-        <span>© 2026 PayzenMax.com</span>
+        <span>© 2026 Ascel Bill</span>
         <span class="mono">GSTIN-aware · Paise-exact · Made in India</span>
       </div>
     </footer>

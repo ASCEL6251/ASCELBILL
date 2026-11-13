@@ -99,7 +99,7 @@ export const SettingsModal: React.FC<SettingsModalProps> = ({
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `PayzenMax_Backup_${business.tradeName.replace(/\s+/g, '_')}_${Date.now()}.json`;
+    a.download = `AscelBill_Backup_${business.tradeName.replace(/\s+/g, '_')}_${Date.now()}.json`;
     a.click();
     URL.revokeObjectURL(url);
   };
