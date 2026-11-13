@@ -31,7 +31,10 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
           echo "Pushing main branch to ASCEL6251/ASCELBILL..."
-          git push --force "https://x-access-token:${SYNC_TOKEN}@github.com/ASCEL6251/ASCELBILL.git" main:main --tags
+          if ! git push --force "https://x-access-token:${SYNC_TOKEN}@github.com/ASCEL6251/ASCELBILL.git" main:main --tags; then
+            echo "::error::Push failed! If you received a 403 Permission Denied error, ensure Sujoymoulick is invited as a Collaborator with Write/Admin access on https://github.com/ASCEL6251/ASCELBILL/settings/access OR generate the token directly from the ASCEL6251 GitHub account."
+            exit 1
+          fi
 
           echo "Successfully synced main branch to https://github.com/ASCEL6251/ASCELBILL"
 
